@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiac Explorer</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Zodiac Explorer! 🌟</h1>
+        <p>Find out your zodiac sign and what it says about you!</p>
+        
+        <div class="card">
+            <form action="/submit-user" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required 
+                           placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Your Birthday:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                
+                <button type="submit">Discover Your Zodiac Sign!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Zodiac Information</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Your Zodiac Information ✨</h1>
+
+    <div class="card">
+        <select id="userSelect" onchange="showZodiacInfo()">
+            <option value="">Select a person</option>
+            {{#each users}}
+            <option value="{{this.zodiacSign}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+
+        {{#each zodiacData}}
+        <div class="zodiac-info" id="{{@key}}" style="display: none;">
+            <h2>{{@key}}</h2>
+            <p><strong>Description:</strong> {{this.description}}</p>
+            <p><strong>2025 Prediction:</strong> {{this.prediction}}</p>
+        </div>
+        {{/each}}
+    </div>
+
+    <p style="margin-top: 20px;">
+        <a href="/" style="color: #3498db;">← Back to Home</a>
+    </p>
+
+    <script>
+        function showZodiacInfo() {
+            // Hide all zodiac info divs
+            document.querySelectorAll('.zodiac-info').forEach(div => {
+                div.style.display = 'none';
+            });
+
+            // Show selected zodiac info
+            const selected = document.getElementById('userSelect').value;
+            if (selected) {
+                document.getElementById(selected).style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

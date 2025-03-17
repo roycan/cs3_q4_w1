@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zodiac App Flowchart</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body { max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; }
+        .description, .details { line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="description">
+        <p>The Zodiac Explorer is a web application that helps users discover their zodiac sign based on their birth date. The application maintains a record of user submissions and displays zodiac information for all registered users.</p>
+    </div>
+
+    <h1>Application Flow</h1>
+    <div class="mermaid">
+        flowchart TD
+            A[Start] --> B{Is user registered?}
+            B -->|Yes| C[Show zodiac info]
+            B -->|No| D[Show registration form]
+            D --> E[Submit form]
+            E --> F[Calculate zodiac sign]
+            F --> C
+            C --> G[End]
+    </div>
+
+    <div class="details">
+        <h2>Detailed Flow Explanation</h2>
+        <p>The application begins at the homepage where it checks if the user is registered. For registered users, the system directly displays their zodiac information along with details about their sign's characteristics, compatibility, and other relevant astrological information. For new users, a registration form is presented where they can enter their name and birth date.</p>
+        
+        <p>When a new user submits the registration form, the system processes their birth date to calculate their zodiac sign using precise date ranges for each astrological sign. After calculation, the user is redirected to the information page where they can see their zodiac details along with information about other registered users, creating a community-driven experience.</p>
+    </div>
+</body>
+</html>
